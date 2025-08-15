@@ -1,2 +1,2 @@
-# tai-shang-evm-on-chain-ai-agent-framework
-An AI agent framework that based on evm.
+# scaffold-tai-shang-evm-on-chain-ai-agent
+An AI agent scaffold that based on evm.
