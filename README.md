@@ -75,9 +75,9 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 }
 ```
 
-## Knowledges
+### 2.3 On-Chain Knowledges
 
-【EXAMPLE】
+【EXAMPLE】Bitcoin Whitepaper
 
 ```json
 {
@@ -87,7 +87,11 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 }
 ```
 
+### 2.4 Off-Chain Knowledges
 
+【EXAMPLE】Bitcoin Whitepaper
+
+> [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
 
 ## 3 Deck
 
