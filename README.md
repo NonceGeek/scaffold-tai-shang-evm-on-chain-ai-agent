@@ -40,13 +40,13 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
   * Example: [15536](https://bodhi.wtf/space/5/15536)
 * `Prompts[]`: the list of prompts of the AI agent.
   * Type: `list of bodhi assets`
-  * Example: [[15537](https://bodhi.wtf/15537)]
+  * Example: [[15539](https://bodhi.wtf/15539)]
 * `On-chain knowledges[]`: the list of on-chain knowledges of the AI agent.
   * Type: `list of bodhi assets`
-  * Example: [TODO](TODO)
+  * Example:  [[15540](https://bodhi.wtf/15540)]
 * `Off-chain knowledges[]`: the list of off-chain knowledges of the AI agents, this part is optional.
   * Type: `list of links`
-  * Example: [TODO](TODO)
+  * Example: [[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)]
 
 > 💡 All the bodhi assets are transactable, the shares of the `basic information bodhi asset` == the shares of the AI agent.
 
