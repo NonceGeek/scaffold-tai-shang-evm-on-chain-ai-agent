@@ -98,6 +98,6 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 [基于 Bodhi 协议的链上 AI Agent 工厂](./deck.pdf)
 
 * **AI + Tokenized:** Agent, Prompts 和知识数据均被代币化
-* **内容永存：**Agent, Prompts 和知识数据均为永存数据
+* **内容永存：** Agent, Prompts 和知识数据均为永存数据
 * **乐高式 AI Agent:** 由多方要素像乐高积木一样「自由组合」
 
