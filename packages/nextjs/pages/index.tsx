@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { NextPage } from "next";
-// import { type } from "os";
-import ReactMarkdown from "react-markdown";
 
 //定义一个新的数据类型来记录后端返回的数据
 export type resultByDataset = {
@@ -30,6 +28,7 @@ export type AIAgent = {
   prompts: number[];
   on_chain_knowledges: number[];
   off_chain_knowledges: any[];
+  landing_page: string;
 };
 
 const ETHSpace: NextPage = () => {
@@ -117,6 +116,7 @@ const ETHSpace: NextPage = () => {
                     id,
                     name,
                     description,
+                    landing_page,
                     contract_addr,
                     owner_addr,
                     bodhi_id,
@@ -134,14 +134,16 @@ const ETHSpace: NextPage = () => {
                       <div className="p-5">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
                         <div className="mb-3 font-normal text-gray-700 dark:text-gray-400 h-25 overflow-y-auto text-center">
-                          <ReactMarkdown
-                            className="flex justify-center"
-                            components={{
-                              img: ({ ...props }) => <img {...props} className="mx-auto" alt="" />,
-                            }}
-                          >
-                            {description}
-                          </ReactMarkdown>
+                          <div className="flex justify-center">
+                            <div>
+                              {description.replace(/\\n/g, '\n').split('\n').map((line, index) => (
+                                <div key={index}>
+                                  {line}
+                                  {index < description.replace(/\\n/g, '\n').split('\n').length - 1 && <br />}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         </div>
 
                         <div className="mb-3">
@@ -168,7 +170,16 @@ const ETHSpace: NextPage = () => {
                             </a>
                           </div>
                         </div>
-
+                        <div className="flex gap-1 mb-4">
+                          <a
+                            href={landing_page}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex-1 inline-flex justify-center items-center px-2 py-2 text-xs font-medium text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                          >
+                            Interact with this Agent!
+                          </a>
+                        </div>
                         <div className="flex gap-1 mb-4">
                           <a
                             href={`https://bodhi.wtf/${bodhi_id}?action=buy`}
@@ -250,7 +261,7 @@ const ETHSpace: NextPage = () => {
                           <div className="text-xs text-gray-500 dark:text-gray-400">
                             Created: {new Date(created_at).toLocaleDateString()}
                             <br></br>
-                            Updated: {new Date(updated_at).toLocaleDateString()}
+                            Updated: {updated_at ? new Date(updated_at).toLocaleDateString() : 'Not updated'}
                           </div>
                         </div>
                       </div>
