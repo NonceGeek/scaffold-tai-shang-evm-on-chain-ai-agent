@@ -150,7 +150,7 @@ const ETHSpace: NextPage = () => {
                           <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                             <strong>Contract: </strong>
                             <a
-                              href={`/debug/${name.replace(/\s+/g, '')}`}
+                              href={`/debug/BodhiBasedAIAgent?addr=${contract_addr}`}
                               target="_blank"
                               rel="noreferrer"
                               className="font-mono text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"

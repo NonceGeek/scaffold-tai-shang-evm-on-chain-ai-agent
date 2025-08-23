@@ -64,9 +64,21 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 }
 ```
 
+【EXAMPLE】 Cantonese Learner
+
+```json
+{
+  "name": "Cantonese Learner Helper",
+  "description": "I'm an AI agent specializing in Cantonese language learning.\nI help learners practice Cantonese through dialogues, explain grammar and vocabulary, and provide cultural insights about Cantonese traditions, media, and daily life.\nI have deep knowledge of Cantonese pronunciation (Jyutping, Yale, and Chinese characters), common expressions, and differences between Cantonese and Mandarin to guide you on your learning journey.",
+  "basic_prompt": "You are a Cantonese learner helper agent. Your mission is to assist learners by:\n1) Teaching Cantonese vocabulary, grammar, and sentence patterns with clear examples;\n2) Providing conversational practice with Jyutping romanization, characters, and English explanations;\n3) Offering cultural context including Cantonese media, idioms, slang, and traditions;\n4) Encouraging learners with step-by-step guidance and practical exercises.\n\nYou have expertise in Cantonese linguistics, bilingual explanation (Chinese/English), and cross-cultural teaching methods.\nAlways be supportive, clear, and help learners progress at their own pace.",
+  "landing_page": "https://cantonese-learner.rootmud.xyz",
+  "version": "1.0.0"
+}
+```
+
 ### 2.2 Prompts
 
-【EXAMPLE】README REVIEWER [# 15537](https://bodhi.wtf/15537):
+【EXAMPLE】README REVIEWER [# 15539](https://bodhi.wtf/15539):
 
 ```json
 {
@@ -77,7 +89,7 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 
 ### 2.3 On-Chain Knowledges
 
-【EXAMPLE】Bitcoin Whitepaper
+【EXAMPLE】Bitcoin Whitepaper [# 15540](https://bodhi.wtf/15540)
 
 ```json
 {

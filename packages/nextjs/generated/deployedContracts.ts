@@ -88,7 +88,7 @@ const contracts = {
             },
           ],
         },
-        BodhiHackerHelper: {
+        BodhiBasedAIAgent: {
           address: "0x5B074757a1Ae77ac5d63a3292E4EC8E5C3A2EcB4",
           abi: [
             {
