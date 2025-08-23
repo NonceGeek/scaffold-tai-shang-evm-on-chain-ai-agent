@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useLocalStorage } from "usehooks-ts";
 import { MetaHeader } from "~~/components/MetaHeader";
 import { ContractUI } from "~~/components/scaffold-eth";
@@ -10,23 +11,51 @@ const selectedContractStorageKey = "scaffoldEth2.selectedContract";
 const contractNames = getContractNames();
 
 const Debug: NextPage = () => {
-
+  const router = useRouter();
+  const { contract } = router.query;
+  
+  // Get contract name from URL
+  const contractFromUrl = Array.isArray(contract) ? contract[0] : contract;
+  
   const [selectedContract, setSelectedContract] = useLocalStorage<ContractName>(
     selectedContractStorageKey,
     contractNames[0],
   );
 
+  // Update selected contract when URL changes or when router is ready
   useEffect(() => {
-    if (!contractNames.includes(selectedContract)) {
+    if (!router.isReady) return; // Wait for router to be ready
+    
+    if (contractFromUrl && contractNames.includes(contractFromUrl as ContractName)) {
+      // URL has a valid contract name, use it
+      setSelectedContract(contractFromUrl as ContractName);
+    } else if (!contractFromUrl) {
+      // No contract in URL (base /debug route), ensure we have a valid selection
+      if (!contractNames.includes(selectedContract)) {
+        setSelectedContract(contractNames[0]);
+      }
+      // Update URL to reflect current selection
+      if (selectedContract && contractNames.includes(selectedContract)) {
+        router.replace(`/debug/${selectedContract}`, undefined, { shallow: true });
+      }
+    } else {
+      // Invalid contract name in URL, fallback to first contract
       setSelectedContract(contractNames[0]);
+      router.replace(`/debug/${contractNames[0]}`, undefined, { shallow: true });
     }
-  }, [selectedContract, setSelectedContract]);
+  }, [router.isReady, contractFromUrl, selectedContract, setSelectedContract, router]);
+
+  // Update URL when contract selection changes (without page reload)
+  const handleContractChange = (contractName: ContractName) => {
+    setSelectedContract(contractName);
+    router.push(`/debug/${contractName}`, undefined, { shallow: true });
+  };
 
   return (
     <>
       <MetaHeader
-        title="Debug Contracts | Scaffold-ETH 2"
-        description="Debug your deployed 🏗 Scaffold-ETH 2 contracts in an easy way"
+        title={`Debug ${selectedContract} | Scaffold-ETH 2`}
+        description={`Debug your deployed ${selectedContract} contract in an easy way`}
       />
       <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
         {contractNames.length === 0 ? (
@@ -41,7 +70,7 @@ const Debug: NextPage = () => {
                       contractName === selectedContract ? "bg-base-300" : "bg-base-100"
                     }`}
                     key={contractName}
-                    onClick={() => setSelectedContract(contractName)}
+                    onClick={() => handleContractChange(contractName)}
                   >
                     {contractName}
                   </button>
@@ -62,9 +91,12 @@ const Debug: NextPage = () => {
         <h1 className="text-4xl my-0">Debug Contracts</h1>
         <p className="text-neutral">
           You can debug & interact with your deployed contracts here.
-          <br /> Check{" "}
+          <br />
+          Navigate to <code className="italic bg-base-300 text-base font-bold px-1">/debug/ContractName</code> to directly access a specific contract.
+          <br />
+          Check{" "}
           <code className="italic bg-base-300 text-base font-bold [word-spacing:-0.5rem] px-1">
-            packages / nextjs / pages / debug.tsx
+            packages / nextjs / pages / debug / [[...contract]].tsx
           </code>{" "}
         </p>
       </div>

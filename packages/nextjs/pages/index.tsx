@@ -101,7 +101,7 @@ const ETHSpace: NextPage = () => {
               <br></br>
               <br></br>
               <a
-                href="/debug"
+                href="/debug/BodhiBasedAIAgentFactory"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-full hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -150,7 +150,7 @@ const ETHSpace: NextPage = () => {
                           <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                             <strong>Contract: </strong>
                             <a
-                              href={`https://optimistic.etherscan.io/address/${contract_addr}`}
+                              href={`/debug/${name.replace(/\s+/g, '')}`}
                               target="_blank"
                               rel="noreferrer"
                               className="font-mono text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
