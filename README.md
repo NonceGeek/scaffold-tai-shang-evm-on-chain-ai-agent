@@ -52,7 +52,7 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 
 ### 2.1 Basic Information
 
-Bodhi Hackathon Helper [#15536](https://bodhi.wtf/space/5/15536): 
+【EXAMPLE】 Bodhi Hackathon Helper [#15536](https://bodhi.wtf/space/5/15536): 
 
 ```json
 {
@@ -64,18 +64,30 @@ Bodhi Hackathon Helper [#15536](https://bodhi.wtf/space/5/15536):
 }
 ```
 
-
-
 ### 2.2 Prompts
 
-README REVIEWER [# 15537](https://bodhi.wtf/15537):
+【EXAMPLE】README REVIEWER [# 15537](https://bodhi.wtf/15537):
 
 ```json
 {
 "name": "Review the README.md file and suggest improvements",
-"prompt": "Step 1: Ask the user to provide the GitHub link of the project.\n\nCall the bewater-github-analyzer.deno.dev API with the fetchCode operation using:\nurl={github_link}/blob/main/README.md\nThis retrieves the content of the README.\n\nAfter that, judge the README based on the following principle:\n\nObjective:\nEvaluate the quality and effectiveness of a GitHub README.md based on key criteria such as clarity, structure, completeness, and usefulness.\n\nInstructions:\nCarefully analyze the README.md and provide a detailed assessment based on the following aspects:\n\n1. Clarity and Readability\n• Is the content well-structured and easy to understand?\n• Are technical terms explained properly?\n• Is the language clear, concise, and free from grammatical errors?\n\n2. Project Overview\n• Does the README provide a clear and concise summary of the project?\n• Does it explain the purpose and goals?\n• Are the core technologies and dependencies mentioned?\n\n3. Installation and Setup\n• Are the installation steps clear and correct?\n• Are dependencies and requirements listed?\n• Are setup instructions detailed enough for different environments?\n\n4. Usage and Examples\n• Are there clear instructions on how to use the project?\n• Are there example commands, code snippets, or demos?\n\n5. Configuration and Customization\n• Are customization options and configurations explained?\n• Are environment variables or settings documented?\n\n6. Contribution Guidelines (if applicable)\n• Are contribution rules and processes clearly stated?\n• Is there guidance on how to submit issues or pull requests?\n\n7. License and Legal Information\n• Is the project’s license specified?\n• Is there a link to the full license text?\n\nFinal Score (Optional):\n• Excellent: Covers all key areas in a clear, structured, and engaging way.\n• Good: Mostly complete but could improve in specific areas.\n• Fair: Has useful content but lacks structure or detail.\n• Poor: Missing important sections or unclear explanations.\n\nPrompt the user to enter "Step2" for the second step."
+"prompt": "Step 1: Ask the user to provide the GitHub link of the project.\n\nCall the bewater-github-analyzer.deno.dev API with the fetchCode operation using:\nurl={github_link}/blob/main/README.md\nThis retrieves the content of the README.\n\nAfter that, judge the README based on the following principle:\n\nObjective:\nEvaluate the quality and effectiveness of a GitHub README.md based on key criteria such as clarity, structure, completeness, and usefulness.\n\nInstructions:\nCarefully analyze the README.md and provide a detailed assessment based on the following aspects:\n\n1. Clarity and Readability\n• Is the content well-structured and easy to understand?\n• Are technical terms explained properly?\n• Is the language clear, concise, and free from grammatical errors?\n\n2. Project Overview\n• Does the README provide a clear and concise summary of the project?\n• Does it explain the purpose and goals?\n• Are the core technologies and dependencies mentioned?\n\n3. Installation and Setup\n• Are the installation steps clear and correct?\n• Are dependencies and requirements listed?\n• Are setup instructions detailed enough for different environments?\n\n4. Usage and Examples\n• Are there clear instructions on how to use the project?\n• Are there example commands, code snippets, or demos?\n\n5. Configuration and Customization\n• Are customization options and configurations explained?\n• Are environment variables or settings documented?\n\n6. Contribution Guidelines (if applicable)\n• Are contribution rules and processes clearly stated?\n• Is there guidance on how to submit issues or pull requests?\n\n7. License and Legal Information\n• Is the project’s license specified?\n• Is there a link to the full license text?\n\nFinal Score (Optional):\n• Excellent: Covers all key areas in a clear, structured, and engaging way.\n• Good: Mostly complete but could improve in specific areas.\n• Fair: Has useful content but lacks structure or detail.\n• Poor: Missing important sections or unclear explanations.\n\nPrompt the user to enter 'Step2' for the second step."
 }
 ```
+
+## Knowledges
+
+【EXAMPLE】
+
+```json
+{
+	"name": "bitcoin-whitepaper",
+	"description": "this is the key things of the bitcoin system",
+	"content": "https://bitcoin.org/bitcoin.pdf"
+}
+```
+
+
 
 ## 3 Deck
 

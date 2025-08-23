@@ -24,28 +24,13 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "https://twitter.com/0xleeduckgo",
   },
   {
-    label: "🔥 Buy Shares to support!",
-    href: "https://bodhi.wtf/space/5/15353?action=buy",
+    label: "Contracts",
+    href: "https://optimistic.etherscan.io/address/0xe3de0a0446a962e94c894d9fcdc69cfa1c9e542c#code",
   },
   {
-    label: "Contract Interactor",
-    href: "/debug",
+    label: "An Agent Example",
+    href: "https://analyzer.rootmud.xyz/",
   },
-  // {
-  //   label: "Tagger",
-  //   href: "/debug",
-  //   icon: <BugAntIcon className="h-4 w-4" />,
-  // },
-  // {
-  //   label: "ETH-SPACE",
-  //   href: "/",
-  //   icon: <SparklesIcon className="h-4 w-4" />,
-  // },
-  // {
-  //   label: "Block Explorer",
-  //   href: "https://sepolia-blockscout.scroll.io/address/0xEd6a0A29A962B4296bCeEC4e1E55F5Ec0474EAC7/contracts#address-tabs",
-  //   icon: <MagnifyingGlassIcon className="h-4 w-4" />,
-  // },
 ];
 
 export const HeaderMenuLinks = () => {
@@ -147,8 +132,8 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">🤘 Indiehacker Operation System 🤘</span>
-            <span className="text-xs">ꄃ The mind operation system for indiehacker ꄃ.</span>
+            <span className="font-bold leading-tight">🤘 AI Agent Generator 🤘</span>
+            <span className="text-xs">ꄃ To tokenize the AI Agents on the Ethereum ꄃ.</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
