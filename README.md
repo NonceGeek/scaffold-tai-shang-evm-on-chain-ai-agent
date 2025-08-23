@@ -1,11 +1,19 @@
 # scaffold-tai-shang-evm-on-chain-ai-agent
 An AI agent scaffold that based on evm.
 
+See Demo: 
+
+> 🔗 https://agent-generator.rootmud.xyz
+
+See Deck:
+
+> [基于 Bodhi 协议的链上 AI Agent 工厂](./deck.pdf)
+
 ## 1 Smart Contracts
 
 see all the contents in `./contracts` folder.
 
-* [bodhi](https://bodhi.wtf) by [luyao](https://x.com/levi0214): smart contract that tokenize the content on arweave as 1155.
+* [bodhi](https://bodhi.wtf) by [luyao](https://x.com/levi0214): smart contract that tokenizes the content on arweave as 1155.
 
   [0x2ad82a4e39bac43a54ddfe6f94980aaf0d1409ef](https://optimistic.etherscan.io/address/0x2ad82a4e39bac43a54ddfe6f94980aaf0d1409ef#code)
 
@@ -15,7 +23,13 @@ see all the contents in `./contracts` folder.
 
 * [bodhi based AI agent factory](//TODO) by [leeduckgo](https://x.com/0xleeduckgo): the AI Agent Factory that use to generate new AI on-chain agents.
 
-  [0x0](https://optimistic.etherscan.io/address/0x0)
+  [0xe3de0a0446a962e94c894d9fcdc69cfa1c9e542c](https://optimistic.etherscan.io/address/0xe3de0a0446a962e94c894d9fcdc69cfa1c9e542c#code)
+  
+  > 💡 The `Constructor Arguments ABI-encoded` when verifying on the etherscan, it is:
+  >
+  > `0x2ad82a4e39bac43a54ddfe6f94980aaf0d1409ef` 
+  >
+  >  => `0000000000000000000000002ad82a4e39bac43a54ddfe6f94980aaf0d1409ef`
 
 ## 2 TaiShang on-chain AI Agent Defination
 
@@ -23,10 +37,10 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 
 * `Basic information`: the basic information of the AI agent.
   * Type: `bodhi asset`
-  * Example: [TODO](TODO)
+  * Example: [15536](https://bodhi.wtf/space/5/15536)
 * `Prompts[]`: the list of prompts of the AI agent.
   * Type: `list of bodhi assets`
-  * Example: [TODO](TODO)
+  * Example: [[15537](https://bodhi.wtf/15537)]
 * `On-chain knowledges[]`: the list of on-chain knowledges of the AI agent.
   * Type: `list of bodhi assets`
   * Example: [TODO](TODO)
@@ -37,6 +51,8 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 > 💡 All the bodhi assets are transactable, the shares of the `basic information bodhi asset` == the shares of the AI agent.
 
 ### 2.1 Basic Information
+
+Bodhi Hackathon Helper [#15536](https://bodhi.wtf/space/5/15536): 
 
 ```json
 {
@@ -49,4 +65,23 @@ An agent is constructed by 0x04 parts: `basic information, prompts[], on-chain k
 ```
 
 
+
+### 2.2 Prompts
+
+README REVIEWER [# 15537](https://bodhi.wtf/15537):
+
+```json
+{
+"name": "Review the README.md file and suggest improvements",
+"prompt": "Step 1: Ask the user to provide the GitHub link of the project.\n\nCall the bewater-github-analyzer.deno.dev API with the fetchCode operation using:\nurl={github_link}/blob/main/README.md\nThis retrieves the content of the README.\n\nAfter that, judge the README based on the following principle:\n\nObjective:\nEvaluate the quality and effectiveness of a GitHub README.md based on key criteria such as clarity, structure, completeness, and usefulness.\n\nInstructions:\nCarefully analyze the README.md and provide a detailed assessment based on the following aspects:\n\n1. Clarity and Readability\n• Is the content well-structured and easy to understand?\n• Are technical terms explained properly?\n• Is the language clear, concise, and free from grammatical errors?\n\n2. Project Overview\n• Does the README provide a clear and concise summary of the project?\n• Does it explain the purpose and goals?\n• Are the core technologies and dependencies mentioned?\n\n3. Installation and Setup\n• Are the installation steps clear and correct?\n• Are dependencies and requirements listed?\n• Are setup instructions detailed enough for different environments?\n\n4. Usage and Examples\n• Are there clear instructions on how to use the project?\n• Are there example commands, code snippets, or demos?\n\n5. Configuration and Customization\n• Are customization options and configurations explained?\n• Are environment variables or settings documented?\n\n6. Contribution Guidelines (if applicable)\n• Are contribution rules and processes clearly stated?\n• Is there guidance on how to submit issues or pull requests?\n\n7. License and Legal Information\n• Is the project’s license specified?\n• Is there a link to the full license text?\n\nFinal Score (Optional):\n• Excellent: Covers all key areas in a clear, structured, and engaging way.\n• Good: Mostly complete but could improve in specific areas.\n• Fair: Has useful content but lacks structure or detail.\n• Poor: Missing important sections or unclear explanations.\n\nPrompt the user to enter "Step2" for the second step."
+}
+```
+
+## 3 Deck
+
+[基于 Bodhi 协议的链上 AI Agent 工厂](./deck.pdf)
+
+* **AI + Tokenized:** Agent, Prompts 和知识数据均被代币化
+* **内容永存：**Agent, Prompts 和知识数据均为永存数据
+* **乐高式 AI Agent:** 由多方要素像乐高积木一样「自由组合」
 
