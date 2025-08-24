@@ -28,7 +28,7 @@ const Generator: NextPage = () => {
   const [agentDescription, setAgentDescription] = useState("I am a helpful AI agent that can help you with your tasks.");
   const [landingPageUrl, setLandingPageUrl] = useState("https://www.google.com");
   const [generatedJson, setGeneratedJson] = useState<string>("");
-  const [bodhiId, setBodhiId] = useState<string>("");
+  const [bodhiId, setBodhiId] = useState<string>("15541");
 
   // Generate JSON based on form inputs
   const generateAgentJson = () => {
@@ -219,6 +219,8 @@ const Generator: NextPage = () => {
               <li>Click &quot;Create Bodhi Asset&quot; to open Bodhi platform and create your asset</li>
               <li>Once your Bodhi asset is created, copy its ID and paste it in the Bodhi ID field</li>
               <li>Click &quot;Deploy Agent On-Chain&quot; to create your agent contract</li>
+              <br></br>
+              <li>Update the prompts(bodhi id list) and the knowledges(bodhi id list) after deployed</li>
             </ol>
           </div>
         </div>
