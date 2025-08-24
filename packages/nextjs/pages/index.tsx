@@ -101,7 +101,7 @@ const ETHSpace: NextPage = () => {
               <br></br>
               <br></br>
               <a
-                href="/debug/BodhiBasedAIAgentFactory"
+                href="/generator"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-full hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
